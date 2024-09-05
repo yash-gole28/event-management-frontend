@@ -3,12 +3,14 @@ import toast from 'react-hot-toast'
 import { Box, CardMedia, Typography } from '@mui/material'
 import image from './../../Assets/img.jpg'
 import Grid from '@mui/material/Grid2';
+import Carousal from '../../Components/Carousal';
 
 const Homepage = () => {
 
     return (
         <Box sx={{ width: '100%', overflow: 'hidden' }}>
             {/* <img src={image} alt="" /> */}
+            <Carousal/>
             <Typography variant='h6'>Your Event Planner</Typography>
             <CardMedia
                 component="img"
