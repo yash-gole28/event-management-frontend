@@ -20,7 +20,8 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Outlet, NavLink } from 'react-router-dom';
 import Footer from './Footer';
-
+import EventIcon from '@mui/icons-material/Event';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -65,8 +66,8 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  backgroundColor: theme.palette.primary.main,
-  color:theme.palette.background.default,
+  color: theme.palette.primary.main,
+  backgroundColor: theme.palette.background.default,
   variants: [
     {
       props: ({ open }) => open,
@@ -167,98 +168,72 @@ export default function PersistentDrawer() {
           <ListItem disablePadding sx={{ display: 'block' }}>
             <StyledNavLink to="/">
               <ListItemButton
-                sx={[
-                  {
-                    minHeight: 48,
-                    px: 2.5,
-                  },
-                  open
-                    ? {
-                        justifyContent: 'initial',
-                      }
-                    : {
-                        justifyContent: 'center',
-                      },
-                ]}
-              >
+                sx={[{
+                  minHeight: 48,
+                  px: 2.5,
+                },
+                open ? { justifyContent: 'initial', } : { justifyContent: 'center', },
+                ]} >
                 <ListItemIcon
-                  sx={[
-                    {
-                      minWidth: 0,
-                      justifyContent: 'center',
-                    },
-                    open
-                      ? {
-                          mr: 3,
-                        }
-                      : {
-                          mr: 'auto',
-                        },
-                  ]}
-                >
+                  sx={[{
+                    minWidth: 0,
+                    justifyContent: 'center',
+                  },
+                  open ? { mr: 3, } : { mr: 'auto', },]} >
                   <InboxIcon />
                 </ListItemIcon>
                 <ListItemText
                   primary="Home"
+                  sx={[open ? {opacity: 1,}
+                      : {opacity: 0, },
+                  ]} />
+              </ListItemButton>
+            </StyledNavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ display: 'block' }}>
+            <StyledNavLink to="/events">
+              <ListItemButton
+                sx={[ {  minHeight: 48,
+                    px: 2.5,},
+                  open ? {justifyContent: 'initial', }: {justifyContent: 'center',},
+                ]} >
+                <ListItemIcon
+                  sx={[{
+                      minWidth: 0,
+                      justifyContent: 'center', },
+                    open? { mr: 3, } : { mr: 'auto', },
+                  ]}>
+                  <EventIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Events"
                   sx={[
-                    open
-                      ? {
-                          opacity: 1,
-                        }
-                      : {
-                          opacity: 0,
-                        },
-                  ]}
-                />
+                    open ? {  opacity: 1, }: { opacity: 0,},
+                  ]} />
               </ListItemButton>
             </StyledNavLink>
           </ListItem>
           <ListItem disablePadding sx={{ display: 'block' }}>
-            <StyledNavLink to="/demo">
+            <StyledNavLink to="/profile">
               <ListItemButton
-                sx={[
-                  {
+                sx={[{
                     minHeight: 48,
-                    px: 2.5,
-                  },
-                  open
-                    ? {
-                        justifyContent: 'initial',
-                      }
-                    : {
-                        justifyContent: 'center',
-                      },
-                ]}
-              >
+                    px: 2.5,  },
+                  open ? { justifyContent: 'initial',  }  : {  justifyContent: 'center',  },
+                ]} >
                 <ListItemIcon
-                  sx={[
-                    {
+                  sx={[   {
                       minWidth: 0,
-                      justifyContent: 'center',
-                    },
-                    open
-                      ? {
-                          mr: 3,
-                        }
-                      : {
-                          mr: 'auto',
-                        },
-                  ]}
-                >
-                  <MailIcon />
+                      justifyContent: 'center', },
+                    open  ? {   mr: 3,  }  : { mr: 'auto',  },
+                  ]}  >
+                  <PermIdentityIcon />
                 </ListItemIcon>
                 <ListItemText
-                  primary="Demo"
-                  sx={[
-                    open
-                      ? {
-                          opacity: 1,
-                        }
-                      : {
-                          opacity: 0,
-                        },
-                  ]}
-                />
+                  primary="Profile"
+                  sx={[open ? {  opacity: 1,  }: { opacity: 0,  },
+                  ]}  />
               </ListItemButton>
             </StyledNavLink>
           </ListItem>
@@ -268,7 +243,7 @@ export default function PersistentDrawer() {
       <Box component="main" sx={{ flexGrow: 1, backgroundColor: theme.palette.background.default }}>
         <DrawerHeader />
         <Outlet />
-        <Footer/>
+        <Footer />
       </Box>
     </Box>
   );
