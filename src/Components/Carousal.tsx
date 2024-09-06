@@ -1,19 +1,25 @@
-import React from 'react'
+// SliderComponent.tsx
+import React from 'react';
+import { Box, Button, Typography } from '@mui/material';
 import image from './../Assets/img.jpg'
 
+
+
 const Carousal = () => {
+  // Slider settings
+
+
   return (
-    <div>
-        <div id="carouselExample" className="carousel slide">
+    <div id="carouselExample" className="carousel slide">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={image } className="d-block w-100" alt=".../"/>
+      <img src={image} className="d-block w-100 carousel-img" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="..." className="d-block w-100" alt="..."/>
+      <img src={image} className="d-block w-100 carousel-img" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="..." className="d-block w-100" alt="..."/>
+      <img src={image} className="d-block w-100 carousel-img" alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -25,8 +31,7 @@ const Carousal = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Carousal
+export default Carousal;

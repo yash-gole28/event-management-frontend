@@ -10,19 +10,20 @@ import NotFound from './Pages/pageNotFound/NotFound';
 import Events from './Pages/events/Events';
 import Profile from './Pages/profile/Profile';
 import Register from './Pages/register/Register';
+import { Box } from '@mui/material';
 
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#606C38',
+      main: '#ffff',
     },
     secondary: {
-      main: '#DDA15E',
+      main: '#ffff',
     },
     background: {
       default: '#ffff',
-      paper: '#FEFAE0',
+      paper: '#ffff',
     },
     text: {
       primary: '#283618',
@@ -36,7 +37,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div className="App">
+    <Box sx={{width:'100%'}}>
        <ThemeProvider theme={theme}>
       <Routes>
         <Route path='/' element={<PersistentDrawer />}>
@@ -50,7 +51,7 @@ function App() {
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       </ThemeProvider>
-    </div>
+    </Box>
   );
 }
 
