@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast'
+import React from 'react'
+// import toast from 'react-hot-toast'
 import { Box, CardMedia, Typography } from '@mui/material'
-import image from './../../Assets/img.jpg'
-import imageSecond from './../../Assets/img2.jpg'
+
 import Grid from '@mui/material/Grid2';
 
 import FullWidthTabs from '../../Components/Navigation'

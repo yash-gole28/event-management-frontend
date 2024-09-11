@@ -5,12 +5,11 @@ import Homepage from './Pages/homepage/Homepage';
 import PersistentDrawer from './Components/Drawer';
 import Demo from './Pages/demopage/Demo';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import NotFound from './Pages/pageNotFound/NotFound';
-import Events from './Pages/events/Events';
 import Profile from './Pages/profile/Profile';
 import Register from './Pages/register/Register';
 import { Box } from '@mui/material';
+import AddEvent from './Pages/addEvent/AddEvent';
 
 
 const theme = createTheme({
@@ -27,7 +26,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#283618',
-      secondary: '#BC6C25',
+      secondary: '#283618',
     },
     // drawer: {
     //   main: '#DDA15E', // Add custom color for the drawer
@@ -43,7 +42,7 @@ function App() {
         <Route path='/' element={<PersistentDrawer />}>
           <Route index element={<Homepage />} />
           <Route path='demo' element={<Demo/>} />
-          <Route path='events' element={<Events/>} />
+          <Route path='add-event' element={<AddEvent/>} />
           <Route path='profile' element={<Profile/>} />
           
         </Route>

@@ -17,7 +17,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { Outlet, NavLink } from 'react-router-dom';
 import Footer from './Footer';
 import EventIcon from '@mui/icons-material/Event';
@@ -66,7 +65,7 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  color: theme.palette.primary.main,
+  color: theme.palette.text.primary,
   backgroundColor: theme.palette.background.default,
   variants: [
     {
